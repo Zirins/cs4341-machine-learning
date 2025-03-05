@@ -48,8 +48,8 @@ After getting the dataset, can use dataset.classes to get the class names: ['ang
 # This is a command line code for Jupyter Notebook to unzip file
 # Please change the first address to the zip file path
 # The second path is for the images folder
-# !unzip -q fer_2013_train.zip -d ./
-# You can run "unzip -q fer_2013_train.zip -d ./" on your local machine to unzip the data
+# !unzip -q fer_2013_train_folder.zip -d ./
+# You can run "unzip -q fer_2013_train_folder.zip -d ./" on your local machine to unzip the data
 
 
 ################################################################################
@@ -60,7 +60,7 @@ After getting the dataset, can use dataset.classes to get the class names: ['ang
 ## If you want to show some image samples
 
 # Image dir
-image_dir = "./fer_2013_train/train"
+image_dir = "fer_2013_train/train"
 
 # Images from all classes
 class_folders = [folder for folder in os.listdir(image_dir) if os.path.isdir(os.path.join(image_dir, folder))]
@@ -236,7 +236,7 @@ For more infomation about data and dataloader, please refer to the PyTorch websi
 
 # Construct train datasets
 # The argument "loader" tells how torchvision reads the data.
-train_dir = "./fer_2013_train/train"
+train_dir = "fer_2013_train/train"
 
 # We use ImageFolder to read the images and set the annotations for each image
 # Do not use train_transforms for this step, since the validation data should not have data augmantation
@@ -398,12 +398,12 @@ We keep part of the test data and we’ll run your best performing model to dete
 # This is a command line code for Jupyter Notebook to unzip file
 # Please change the first address to the zip file path
 # The second path is for the images folder
-# !unzip -q fer_2013_test.zip -d ./
-# You can run "unzip -q fer_2013_train.zip -d ./" on your local machine to unzip the data
+# !unzip -q fer_2013_test_folder.zip -d ./
+# You can run "unzip -q fer_2013_train_folder.zip -d ./" on your local machine to unzip the data
 
 # Construct test datasets
 # The argument "loader" tells how torchvision reads the data.
-test_dir = "./fer_2013_test/test"
+test_dir = "fer_2013_test_folder/test"
 
 # We use ImageFolder to read the images and set the annotations for each image
 test_dataset = ImageFolder(test_dir, transform=test_transforms)
